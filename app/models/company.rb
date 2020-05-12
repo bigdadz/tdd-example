@@ -1,8 +1,8 @@
-class User
+class Company
   include Mongoid::Document
   include Mongoid::Timestamps
 
   field :name, type: String
 
-  belongs_to :company, required: false
+  has_many :users
 end

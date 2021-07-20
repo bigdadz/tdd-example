@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_with model: @user, class: "form-group" do |form| %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: "form-control" %>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: "form-control" %>
+    <%= form.submit "Create", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>User List</h1>
+  <%= link_to("New User", new_user_path, class: "btn btn-primary") %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <th scope="row"><%= user.id %></th>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

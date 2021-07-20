@@ -71,6 +71,12 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
 end
 
 Shoulda::Matchers.configure do |config|
